@@ -1,16 +1,19 @@
-#Goal
+# Goal
 
 got info. from existed Google Map HTML
+
+see source osakanortheq18.php
+
 
 # Language
 
 PHP (5.6)
 
-#test site
+# test site
 
 <a href="http://caesalpina.com/osakanortheq18/osakanortheq18.php">http://caesalpina.com/osakanortheq18/osakanortheq18.php</a>
 
-#Licence/Title
+# Licence/Title
 
     Script get Google Map Contents and analyze
      osakanortheq18.php
@@ -18,7 +21,7 @@ PHP (5.6)
             CC BY 3.0 by M3 (http://caesalpina.com/M3)
 
 
-#Related
+# Related
 
 Opensource*Kyoto
 
