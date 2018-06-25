@@ -1,6 +1,6 @@
 # Goal
 
-got info. from existed Google Map HTML
+get info. from existed Google Map HTML
 
 see source osakanortheq18.php
 
