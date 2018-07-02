@@ -2,7 +2,7 @@
 /*
     Script get Google Map Contents and analyze
      osakanortheq18.php
-     Ver.1.0
+     Ver.1.0 (UTF-8)
             CC BY 3.0 by M3 (http://caesalpina.com/M3)
  */
 ?>
@@ -49,16 +49,23 @@
 <body>
 <div id="content">
 <?php
+  print("<h3>Auto update stopped due to All GAS troubles near 2018 Osaka North Quake ground 0 all recoverd already. [2018-07-02 11:39]</h3>\n");
+  print("<b>(you can update data to push \"gen\" button)</b><br />\n");
   print("<a href=\"/osakanortheq18/osakanortheq18.php\">reload</a> <form action=\"/osakanortheq18/osakanortheq18.php\" method=\"get\" name=\"osakanortheq18gen\"><input type=\"submit\" name=\"osakanortheq18sub\" value=\"gen\" /></form>\n");
-  print("source: <a href=\"http://caesalpina.com/osakanortheq18/osakanortheq18.php.txt\">osakanortheq18.php</a><br />\n");
-  print("json data: <a href=\"http://caesalpina.com/osakanortheq18/jsontest.json\">jsontest.json</a><br />\n");
+  print("source: <a href=\"http://caesalpina.com/osakanortheq18/osakanortheq18.php.txt\">osakanortheq18.php</a>    02Jul 11:39 2018 (UTF-8)<br />\n");
+  print("test data (update 2 times in 1 day. ): <a href=\"http://caesalpina.com/osakanortheq18/testdata.html\">testdata.html</a><br />\n");
+  print(" &nbsp; &nbsp;   log of test data (update 2 times in 1 day. ): <a href=\"http://caesalpina.com/osakanortheq18/log_testdata.html\">log_testdata.html</a><br />\n");
+  print("json? data sample: <a href=\"http://caesalpina.com/osakanortheq18/jsontest.json\">jsontest.json</a><br />\n");
   $googlemapurl = 'https://www.google.com/maps/d/u/0/viewer?mid=1hIbVP3i6kqcYF_GECddXyx24514J-PsB&ll=34.8723997%2C135.5899604&z=12';
-  print("Refering GoogleMap: <a href=\"$googlemapurl\">$googlemapurl</a><br />\n");
+  print("Refering GoogleMap: <a href=\"$googlemapurl\">$googlemapurl</a><br />\n"); 
+ print("　　　　 (ライセンス・作成者などはこちら↑のGoogleMapを参照のこと.. )<br />\n");
 
   // fetch and cache grom Google Map
-  $outputfile = 'googlemapsentou.txt';
-  $logfile = 'gmmapsentou.log';
-
+  $gdir = '/home/caesalpina/html/osakanortheq18/'; // change depend on env.
+  $outputfile = $gdir . 'googlemapsentou.txt';
+  chmod($outputfile, 0666);
+  $logfile = $gdir . 'gmmapsentou.log';
+  chmod($logfile, 0666);
 
   if ($_REQUEST['osakanortheq18sub'] == 'gen') {
     print("start fetch and organize.\n<br />");
@@ -105,10 +112,13 @@
     $jaf3 = 0;
     $jaf4 = 0;
     $jaf5 = 0;
+    $jafc = 0;
     for ($i = 0; $i < $cja; $i++) {
 
       if (preg_match('/\[\["名称/', $ja[$i], $ra5) && $jaf5 == 0) {
+  	  $jafc++;
   	  $jaf5 = 1;
+        echo "\n$jafc<br />\n";
       }
       if ($jaf5 > 0) {
   	  $jaf5++;
@@ -145,7 +155,7 @@
     ----
     Script get Google Map Contents and analyze
      osakanortheq18.php
-     Ver.1.0
+     Ver.1.0 (UTF-8)
             CC BY 3.0 by M3 (http://caesalpina.com/M3)
 </pre>
 EOT;
